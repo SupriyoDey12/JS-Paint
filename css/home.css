@@ -6,7 +6,8 @@
     /* background-color: rgb(76, 100, 168); */
 }
 body{
-    background-color: #490b3d;
+/*     background-color: #490b3d; */
+    background: linear-gradient(#000, #490b3d);
     color: white;
 }
 a{
@@ -16,7 +17,7 @@ a{
 /* navigation bar design */
 #navbar{
     /* background-color: rgb(178, 111, 255); */
-    background-color: #490b3d;
+/*     background-color: #490b3d; */
     height: auto;
     width: auto;
     margin: 2px;
