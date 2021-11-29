@@ -7,8 +7,9 @@
 }
 body{
     background-color: #490b3d;
-    /*background: linear-gradient(#000, #490b3d); */
+    /* background: linear-gradient(#000 1%, #490b3d); */
     color: white;
+    height: 100vh;
 }
 a{
     text-decoration: none;
@@ -17,7 +18,7 @@ a{
 /* navigation bar design */
 #navbar{
     /* background-color: rgb(178, 111, 255); */
-    /*background-color: #490b3d; */
+    /* background-color: #490b3d; */
     height: auto;
     width: auto;
     margin: 2px;
@@ -62,7 +63,7 @@ a{
 #nav-item3{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 35%;
 }
 
@@ -89,7 +90,7 @@ a{
 #body1{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 /* custom button design */
