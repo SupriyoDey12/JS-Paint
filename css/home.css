@@ -66,6 +66,23 @@ a{
     justify-content: space-around;
     width: 35%;
 }
+#nav-item1 a::before{
+    content: " ";
+    height: 0px;
+    width: 0px;
+    background-color: #f1b814;
+    position: absolute;
+    top: 7.5%;
+    transition: 0.5s;
+}
+#nav-item1 a:hover::before{
+    content: " ";
+    height: 2px;
+    width: 20px;
+    background-color: #f1b814;
+    position: absolute;
+    top: 7.5%;
+}
 
 /* body design */
 .item1{
@@ -84,7 +101,7 @@ a{
     height: 337px;
     width: 600px;
     margin: 50px auto 50px 10px;
-    border: 2px solid rgb(98, 98, 255);
+    border: 2px solid #f1b814;
     border-radius: 20px;
 }
 #body1{
@@ -95,18 +112,56 @@ a{
 
 /* custom button design */
 #button1{
-    border: 2px solid rgb(119, 0, 255);
+    border: 2px solid #f1b814;
     border-radius: 12px;
     font-family: 'Baloo 2', cursive;
     font-size: 1.5rem;
+    box-sizing: border-box;
     display: inline-block;
     /* margin: auto; */
     padding: 5px 30px;
-    transition-property: background-color;
-    transition-duration: 0.9s;
+    transition: 0.5s;
 }
 
 #button1:hover{
-    background-color: #000;
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    /* padding: 5px 5px; */
+    /* background-color: #000; */
+    /* border-radius: 50px; */
     
+}
+@keyframes swing {
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }
