@@ -9,7 +9,7 @@ body{
     background-color: #490b3d;
     /* background: linear-gradient(#000 1%, #490b3d); */
     color: white;
-    height: 100vh;
+    height: 100%;
 }
 a{
     text-decoration: none;
@@ -125,7 +125,7 @@ a{
 
 #button1:hover{
     -webkit-animation: swing 1s ease;
-    animation: swing 1s ease;
+    animation: swing 0.5s ease;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
     /* padding: 5px 5px; */

@@ -8,7 +8,7 @@
 body{
     background-color: #490b3d;
     color: white;
-    height: 100vh;
+    height: 100%;
     font-family: 'Baloo 2', cursive;
 }
 a{
@@ -238,6 +238,7 @@ form{
     background-color: transparent;
     border: 2px solid #f1b814;
     border-radius: 10px;
+    outline: none;
 }
 .fromgroup2{
     margin: 10px;
@@ -255,6 +256,7 @@ form{
     background-color: transparent;
     border: 2px solid #f1b814;
     border-radius: 10px;
+    outline: none;
 }
 .fromgroup3{
     margin: 10px;
@@ -276,9 +278,13 @@ form{
 }
 .fromgroup3>button:hover{
     -webkit-animation: swing 1s ease;
-    animation: swing 1s ease;
+    animation: swing 0.5s ease;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+}
+::placeholder{
+    color: #ffffff;
+    opacity: 0.5;
 }
 
 /* #item-1{
@@ -294,27 +300,32 @@ form{
     width: 200px;
 } */
 @keyframes swing {
-    20%
+    15%
     {
         -webkit-transform: translateX(5px);
         transform: translateX(5px);
     }
-    40%
+    30%
     {
         -webkit-transform: translateX(-5px);
        transform: translateX(-5px);
     } 
-    60%
+    50%
     {
         -webkit-transform: translateX(3px);
         transform: translateX(3px);
     }
-    80%
+    65%
     {
         -webkit-transform: translateX(-3px);
         transform: translateX(-3px);
     }
-    100% 
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
     {
         -webkit-transform: translateX(0);
         transform: translateX(0);
