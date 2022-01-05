@@ -12,7 +12,7 @@ var cur_tool = "Black Pen"; // Current tool in use
 // Start by Initializing the Canvas and EventListeners
 //      INPUT: the ID of the canvas element
 function init(id) {
-    canvas = document.getElementById(id);
+    canvas = document.getElementById('board');
     ctx = canvas.getContext("2d");
     canvas.width = 889;
     canvas.height = 500;
@@ -47,7 +47,6 @@ function init(id) {
 
 // Function to Clear canvas entirely 
 function clearCanvas() {
-    // TODO: Add functionality to trigger modal for confirmation
     ctx.clearRect(0,0,canvas.width,canvas.height);
     console.log("Canvas Cleared");
 }
