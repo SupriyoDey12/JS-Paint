@@ -3,27 +3,30 @@
     margin: 0%;
     padding: 0%;
     height: auto;
-    /* background-color: rgb(76, 100, 168); */
+   
 }
 body{
-    background-color: #490b3d;
-    /* background: linear-gradient(#000 1%, #490b3d); */
-    color: white;
+    background-color: #ffffff;
+    color: black;
     height: 100%;
+    font-family: 'Baloo 2', cursive;
 }
 a{
     text-decoration: none;
-    color: #f1b814;
+    color: #286f84;
+    /* font-family: 'Times New Roman', Times, serif; */
 }
+
+
 /* navigation bar design */
 #navbar{
-    /* background-color: rgb(178, 111, 255); */
-    /* background-color: #490b3d; */
+    background-color: #b4ebf3;
+    background-color: #cbe7f8;
     height: auto;
     width: auto;
     margin: 2px;
     padding: 5px;
-    /* border-radius: 12px; */
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,13 +38,15 @@ a{
 } 
 
 #nav-item1{
-    width: 30%;
+    width: fit-content;
     display: flex;
     justify-content: space-around;
 }
 #nav-item1>a{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    /* border: 2px solid red; */
+    margin: 0px 20px;
+    /* font-weight: bold; */
 }
 #nav-item2{
     display: flex;
@@ -53,40 +58,33 @@ a{
 #nav-item2>h1{
     font-family: 'Baloo 2';
 }
-.team{
-    width: fit-content;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+nav a{
+    color: #008cba;
+    /* color: black; */
+    font-family: 'baloo 2';
 }
-#nav-item3{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    width: 35%;
-}
+
 #nav-item1 a::before{
     content: " ";
     height: 0px;
     width: 0px;
-    background-color: #f1b814;
+    background-color: #008cba;
     position: absolute;
-    top: 7.5%;
+    top: 2.4rem;
     transition: 0.5s;
 }
 #nav-item1 a:hover::before{
     content: " ";
     height: 2px;
-    width: 20px;
-    background-color: #f1b814;
+    width: 25px;
+    background-color: #008cba;
     position: absolute;
-    top: 7.5%;
+    top: 2.4rem;
 }
 
 /* body design */
 .item1{
-    width: 45%;
+    max-width: 550px;
     margin: 50px 30px 50px 10px;
     padding: 2px;
     font-family: 'Baloo 2', cursive;
@@ -97,10 +95,15 @@ a{
 .item1>h1{
     color: #da4977;
 }
-.item2 img{
-    height: 337px;
+.item2{
     width: 600px;
-    margin: 50px auto 50px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item2 img{
+    height: 85%;
+    width: 95%;
     border: 2px solid #f1b814;
     border-radius: 20px;
 }
@@ -112,6 +115,7 @@ a{
 
 /* custom button design */
 #button1{
+    margin-top: 50px;
     border: 2px solid #f1b814;
     border-radius: 12px;
     font-family: 'Baloo 2', cursive;

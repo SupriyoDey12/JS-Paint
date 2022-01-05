@@ -1,0 +1,94 @@
+/* css reset */
+*{
+    margin: 0%;
+    padding: 0%;
+    height: auto;
+   
+}
+body{
+    background-color: #ffffff;
+    color: black;
+    height: 100%;
+    font-family: 'Baloo 2', cursive;
+}
+a{
+    text-decoration: none;
+    color: #286f84;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+
+/* navigation bar design */
+#navbar{
+    background-color: #b4ebf3;
+    background-color: #cbe7f8;
+    height: auto;
+    width: auto;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#navbar img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+} 
+
+#nav-item1{
+    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+#nav-item1>a{
+    font-size: 1.2rem;
+    /* border: 2px solid red; */
+    margin: 0px 20px;
+    /* font-weight: bold; */
+}
+#nav-item2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+}
+#nav-item2>h1{
+    font-family: 'Baloo 2';
+}
+nav a{
+    color: #008cba;
+    /* color: black; */
+    font-family: 'baloo 2';
+}
+
+#nav-item1 a::before{
+    content: " ";
+    height: 0px;
+    width: 0px;
+    background-color: #008cba;
+    position: absolute;
+    top: 2.4rem;
+    transition: 0.5s;
+}
+#nav-item1 a:hover::before{
+    content: " ";
+    height: 2px;
+    width: 25px;
+    background-color: #008cba;
+    position: absolute;
+    top: 2.4rem;
+}
+
+/* body design */
+.blogs_lr{
+    margin-bottom: 2px;
+    padding: 10px 50px;
+    background: linear-gradient(to right, #aadaf8, #f7fcff);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
