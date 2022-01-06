@@ -1,7 +1,7 @@
 // Declare Variables Globally
 var canvas;             // HTML Element that IS the canvas  
 var ctx;                // Context used to manipulate Canvas
-var drawing = false;    // Is the user trying to draw?s
+var drawing = false;    // Is the user trying to draw
 var dot = false;
 var pX = pY = 0;        // Previous X and Y coordinate
 var cX = cY = 0;        // Current X and Y coordinate
@@ -10,12 +10,11 @@ var color = "black";    // Color of line to draw
 var cur_tool = "Black Pen"; // Current tool in use
 
 // Start by Initializing the Canvas and EventListeners
-//      INPUT: the ID of the canvas element
-function init(id) {
     canvas = document.getElementById('board');
     ctx = canvas.getContext("2d");
     canvas.width = 889;
     canvas.height = 500;
+    canvas.style.cursor = "crosshair";
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     // Create Event Listener for Events we care to process
@@ -42,7 +41,6 @@ function init(id) {
         }
     }, false);
     changeTool();
-}
 
 
 // Function to Clear canvas entirely 
@@ -94,6 +92,7 @@ function locatePointer(a, e) {
 // Draw a line from pX,pY to cX,cY
 function draw() {
     ctx.beginPath();
+    ctx.lineCap = "round";
     ctx.moveTo(pX, pY);
     ctx.lineTo(cX, cY);
     ctx.strokeStyle = color;
@@ -155,6 +154,13 @@ function lineColor(c) {
     console.log("lineColor() called, color: " + color);
     changeTool();
     return;
+}
+
+// color picker
+function colorPicker(){ 
+    color = document.getElementById("color_input").value;
+    cur_tool = "Colour Picker";
+    changeTool();
 }
 
 function strokeForm() {
