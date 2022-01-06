@@ -98,10 +98,12 @@ nav a{
 }
 
 .drop-shadow {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 5px 10px 0px rgb(0, 0, 0);
 }
 
 #board {
+  /* cursor: pointer; */
+  border: 1px solid #286fb4;
   background: #fff;
   border-radius: 10px;
 }
@@ -115,30 +117,28 @@ nav a{
     justify-content: center;
 }
 
-#source {
-  display: none;
-}
-
 
 #controls{
   background: lightsteelblue;
+  border: 1px solid #286fb4;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px 10px;
   height: 100%;
-  width: 200px;
+  width: 230px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(8, auto);
-  grid-row-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(9, auto);
+  grid-row-gap: 10px;
   grid-template-areas: 
+  "current current" 
   "blue black" 
   "green red" 
   "yellow orange" 
   "pink brown" 
-  "current current" 
+  "pick_color pick_change"
+  "line line"
   "eraser clear" 
-  "download download" 
-  "line line";
+  "download download" ;
   justify-items: center;
   font-family: 'Baloo 2';
 
@@ -147,12 +147,13 @@ nav a{
 form{
     color: black;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
     grid-template-areas: "one one" "two three";
     align-items: center;
-    justify-items: center;
+    /* justify-items: center; */
     grid-column-gap: 15px;
+    /* width: 100%; */
 }
 
 .round-button {
@@ -165,7 +166,7 @@ form{
     border-radius: 50%;
     text-align:center;
     text-decoration:none;
-    box-shadow: 0 0 3px gray;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
 }
 
 .round-button:active {
@@ -174,7 +175,8 @@ form{
 }
 
 .square-button{
-    border-radius: 4px;
+    border-radius: 0px;
+    border: 1px solid #286fb4;
     margin: 2px;
     padding: 3px;
     font-size: auto;
@@ -184,6 +186,7 @@ form{
     cursor: pointer;
     height: 100%;
     width: 90%;
+    /* min-width: 80px; */
 }
 
 .square-button:active {

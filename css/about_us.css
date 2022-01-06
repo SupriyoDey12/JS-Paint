@@ -162,6 +162,12 @@ background-color: #e2f0f9;
     font-family: 'Baloo 2';
     font-weight: 400;
 }
+.team{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* designing contact us part  */
