@@ -98,7 +98,7 @@ nav a{
 }
 
 .drop-shadow {
-    box-shadow: 0px 5px 10px 0px rgb(0, 0, 0);
+    box-shadow: 2px 5px 18px 0px #286fb4;
 }
 
 #board {
@@ -122,6 +122,7 @@ nav a{
   background: lightsteelblue;
   border: 1px solid #286fb4;
   border-radius: 20px;
+  /* box-shadow: inset 2px 5px 18px 0px #286fb4; */
   padding: 20px 10px;
   height: 100%;
   width: 230px;
@@ -135,7 +136,7 @@ nav a{
   "green red" 
   "yellow orange" 
   "pink brown" 
-  "pick_color pick_change"
+  "pick_color undo"
   "line line"
   "eraser clear" 
   "download download" ;
@@ -143,16 +144,15 @@ nav a{
   font-family: 'Baloo 2';
 
 }
+#color_input{
+    min-width: 50px;
+    min-height: 30px;
+}
 
 form{
     color: black;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "one one" "two three";
-    align-items: center;
-    /* justify-items: center; */
-    grid-column-gap: 15px;
+    display: flex;
+    flex-flow: column nowrap;
     /* width: 100%; */
 }
 
