@@ -5,9 +5,13 @@ var drawing = false;    // Is the user trying to draw
 var dot = false;
 var pX = pY = 0;        // Previous X and Y coordinate
 var cX = cY = 0;        // Current X and Y coordinate
-var width = 5;          // Width of line to draw
+var width = 3;          // Width of line to draw
 var color = "black";    // Color of line to draw
 var cur_tool = "Black Pen"; // Current tool in use
+
+// variables for undo
+var restore_array = [];
+var index = -1;
 
 // Start by Initializing the Canvas and EventListeners
     canvas = document.getElementById('board');
@@ -40,6 +44,19 @@ var cur_tool = "Black Pen"; // Current tool in use
             locatePointer('click', e);
         }
     }, false);
+
+    //for touch event listener
+    canvas.addEventListener("touchstart", function (e) {
+        locatePointer('click', e);
+    }, false);
+    canvas.addEventListener("touchmove", function (e) {
+        locatePointer('move', e);
+    }, false);
+    canvas.addEventListener("touchend", function (e) {
+        locatePointer('up', e);
+    }, false);
+
+
     changeTool();
 
 
@@ -71,10 +88,21 @@ function locatePointer(a, e) {
             dot = false;
         }
 
-    } else if (a == "up" || a == "out") { // If mouse is lifted/leaves canvas
+    } 
+    else if (a == "up" || a == "out") { // If mouse is lifted/leaves canvas
         // Indicate user is no longer drawing
         drawing = false;
-    } else if (a == "move") {
+
+        //start code for undo function
+        if (a != 'out') {
+            restore_array.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+            index += 1;
+        }
+        console.log(restore_array);
+        //end code for undo function
+
+    } 
+    else if (a == "move") {
         if (drawing) {
             // Move current info to old information
             pX = cX;
@@ -93,6 +121,7 @@ function locatePointer(a, e) {
 function draw() {
     ctx.beginPath();
     ctx.lineCap = "round";
+    ctx.lineJoin = "round";
     ctx.moveTo(pX, pY);
     ctx.lineTo(cX, cY);
     ctx.strokeStyle = color;
@@ -157,21 +186,33 @@ function lineColor(c) {
 }
 
 // color picker
-function colorPicker(){ 
-    color = document.getElementById("color_input").value;
-    cur_tool = "Colour Picker";
-    changeTool();
+// function colorPicker(){ 
+//     color = document.getElementById("color_input").value;
+//     cur_tool = "Colour Picker";
+//     changeTool();
+// }
+
+
+// change the width of the line
+function strokeForm() {
+    width =  document.getElementById("width_range").value;
+    document.getElementById("width_point").innerHTML = "Line Width: " + width;
+    // strokeWidth(input);
+    
 }
 
-function strokeForm() {
-    var input = document.getElementById("lineStroke").value;
-    strokeWidth(input);
+//working on undo function
+function undo() {
+    if (index <= 0) {
+        clearCanvas();
+    }
+    index -= 1;
+    restore_array.pop();
+    ctx.putImageData(restore_array[index], 0, 0);
 }
-// Set the stroke of the line
-// INPUT: s -> integer pixel size for line
-function strokeWidth(s) {
-    width = s;
-}
+
+//working on redo function
+//will work on it later
 
 // Save the canvas as a PNG
 function downloadCanvas() {
