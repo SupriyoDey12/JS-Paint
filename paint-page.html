@@ -43,23 +43,30 @@
             <a class='round-button' onclick=lineColor(6) style="background:orange; grid-area: orange;"></a>
             <a class='round-button' onclick=lineColor(7) style="background:pink; grid-area: pink;"></a>
             <a class='round-button' onclick=lineColor(8) style="background:brown; grid-area: brown;"></a>
+
             <button class='square-button' onclick=lineColor(9)
                 style="color: black; grid-area: eraser;">Erase</button>
+
             <button class='square-button' onclick=clearCanvas()
                 style="color: black; grid-area: clear;">Clear</button>
+
             <button class='square-button' onclick=downloadCanvas()
                 style="color: black; grid-area: download;">Download as PNG</button>
 
-            <input type="color" id="color_input" style="grid-area: pick_color">
-            <input type="button" onclick="colorPicker();" value="Change" class="square-button" style="grid-area: pick_change; height: fit-content; width: 72px;">
+            <input type="color" oninput="color = this.value" onclick="cur_tool = 'Colour Picker';
+            changeTool();" id="color_input" style="grid-area: pick_color">
+
+            <button type="buttton" onclick="undo()" class="square-button" style="grid-area: undo">Undo</button>
+            <!-- <button type="buttton" onclick="Redo()" class="square-button">Redo</button> -->
 
             <h4 style='grid-area: current; color: black;' id="tool">Current Tool:</h4>
             
             <form style=" grid-area: line;">
-                <label for="lineStroke" style="width: 150px; grid-area: one;">Line Width:</label>
-                <input value="5" type="number" id="lineStroke" style="grid-area: two; width: 72px; height: 20px;" />
+                <label for="lineStroke" id="width_point" >Line Width: 3</label>
+                <input type="range"  id="width_range" value="3" min="1" max="20" onchange="strokeForm();">
+                <!-- <input value="5" type="number" id="lineStroke" style="grid-area: two; width: 72px; height: 20px;" />
                 <input type="button" onclick="strokeForm();" value="Change" class="square-button"
-                    style="grid-area: three; justify-self: end; height: fit-content; width: 72px;" />
+                    style="grid-area: three; justify-self: end; height: fit-content; width: 72px;" /> -->
             </form>
         </div>
 
