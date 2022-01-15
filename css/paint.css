@@ -269,3 +269,9 @@ form{
         color: rgb(51, 255, 0);
     }
 }
+
+@media (max-width: 522px){
+    nav a{
+        width: 80%;
+    }
+}
