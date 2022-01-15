@@ -427,3 +427,8 @@ form{
         display: none;
     }
 }
+@media (max-width: 522px){
+    nav a{
+        width: 50%;
+    }
+}
