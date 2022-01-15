@@ -182,6 +182,7 @@ background-color: #e2f0f9;
     padding: 1.2rem;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .social img{
     height: 30px;
@@ -191,15 +192,27 @@ background-color: #e2f0f9;
     /* filter: invert(1); */
     /* border: 2px solid red; */
 }
+.social a:nth-child(odd){
+    background-color: black;
+    border-radius: 10px;
+}
 
 .map{
     margin: 50px;
     padding: 0px 50px 0px 10px;
     height: 400px;
-    width: 700px;
+    max-width: 700px;
 }
 
+
 /* feedback section  */
+
+.feed_image{
+    width: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
 
 .feedback{
     width: fit-content;
@@ -370,4 +383,47 @@ form{
         width: 20%;
     }
 
+    .our_team h2, .our_team h3, .our_team img{
+        display: none;
+    }
+
+    .our_team{
+        margin: 0px;
+        /* padding: 5px; */
+    }
+
+}
+
+@media (max-width: 680px){
+    .items{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,auto);
+    }
+    .img_in_start{
+        grid-area: 1/1/2/2;
+    }
+}
+
+@media (max-width: 1258px){
+.contact{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.map_div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+@media (max-width: 1080px){
+    .feed_image{
+        display: none;
+    }
 }
