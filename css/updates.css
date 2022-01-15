@@ -10,6 +10,7 @@ body{
     color: black;
     height: 100%;
     font-family: 'Baloo 2', cursive;
+    margin-bottom: 50px;
 }
 a{
     text-decoration: none;
