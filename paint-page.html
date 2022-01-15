@@ -17,18 +17,33 @@
     <!-- this is the navigation part -->
 
     <nav id="navbar">
-        <div id="nav-item2">
-            <img src="images/icon.png" alt="error">
-            <h1>JS PAINT</h1>
-        </div>
-
-        <div id="nav-item1">
+        <div id="nav-item1" class="nav-item1">
             <a href="index.html">Home</a>
             <a href="paint-page.html" style="font-weight: 600;">Paint</a>
             <a href="updates.html">Updates</a>
             <a href="aboutus.html">About Us</a>
         </div>
+
+        <div class="menu_icon" onclick="toggle()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div id="nav-item2">
+            <img src="images/icon.png" alt="error">
+            <h1>JS PAINT</h1>
+        </div>
     </nav>
+
+    <!-- for mobile -->
+    <div class="warning">
+       &cross; Warning: Don't use mobile for better experience.
+    </div>
+    
+
+
+
 
     <!-- the body part -->
 
@@ -76,6 +91,18 @@
 
     </div>
     <script src="js/paint.js"></script>
+    
+    <script>
+        function toggle() {
+          var x = document.getElementById("nav-item1");
+          if (x.className === "nav-item1") {
+          x.className = "toggle_menu";
+          }
+          else {
+            x.className = "nav-item1";
+          }
+        }
+    </script>
 </body>
 
 </html>
