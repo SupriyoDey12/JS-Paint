@@ -75,7 +75,7 @@ function clearCanvas() {
 // INPUTS: a -> action performed, e -> event object
 function locatePointer(a, e) {
     if (a == 'click') {
-        e.preventDefault();
+        //e.preventDefault();
         // e.stopPropagation();
         // Move current info to old information
         pX = cX;
