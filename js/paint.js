@@ -13,11 +13,16 @@ var cur_tool = "Black Pen"; // Current tool in use
 var restore_array = [];
 var index = -1;
 
+var responsiveWidth = document.getElementById("board-container");
+
+
 // Start by Initializing the Canvas and EventListeners
     canvas = document.getElementById('board');
     ctx = canvas.getContext("2d");
-    canvas.width = 889;
+    // canvas.width = 889;
     canvas.height = 500;
+    canvas.width= responsiveWidth.offsetWidth - 50;
+
     canvas.style.cursor = "crosshair";
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -51,7 +56,7 @@ var index = -1;
     }, false);
     canvas.addEventListener("touchmove", function (e) {
         locatePointer('move', e);
-    }, false);
+    }, true);
     canvas.addEventListener("touchend", function (e) {
         locatePointer('up', e);
     }, false);
@@ -70,6 +75,8 @@ function clearCanvas() {
 // INPUTS: a -> action performed, e -> event object
 function locatePointer(a, e) {
     if (a == 'click') {
+        e.preventDefault();
+        // e.stopPropagation();
         // Move current info to old information
         pX = cX;
         pY = cY;
@@ -89,6 +96,7 @@ function locatePointer(a, e) {
         }
 
     } 
+
     else if (a == "up" || a == "out") { // If mouse is lifted/leaves canvas
         // Indicate user is no longer drawing
         drawing = false;
@@ -104,6 +112,8 @@ function locatePointer(a, e) {
     } 
     else if (a == "move") {
         if (drawing) {
+            e.preventDefault();
+            // e.stopPropagation();
             // Move current info to old information
             pX = cX;
             pY = cY;
@@ -115,6 +125,8 @@ function locatePointer(a, e) {
             draw();
         }
     }
+
+   
 }
 
 // Draw a line from pX,pY to cX,cY
