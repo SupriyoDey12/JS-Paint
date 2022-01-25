@@ -112,7 +112,7 @@ function locatePointer(a, e) {
     } 
     else if (a == "move") {
         if (drawing) {
-            e.preventDefault();
+            //e.preventDefault();
             // e.stopPropagation();
             // Move current info to old information
             pX = cX;
