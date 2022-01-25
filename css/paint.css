@@ -194,6 +194,12 @@ form{
 }
 
 @media (max-width: 800px) {
+
+    .board-container{
+        width: 100%;
+        height: 100%;
+    }
+    
     .menu_icon{
         /* background-color: black; */
         display: block;
@@ -253,13 +259,14 @@ form{
         width: 100%;
         margin-bottom: 20px;
         grid-row-gap: 2px;
-        padding: 10px;
+        /* padding: 10px; */
         border-radius: 5px;
     }
 
     .square-button{
         /* border-radius: 50%; */
         max-height: 80%;
+        /* max-width: 100px; */
     }
 
     .warning{
@@ -270,6 +277,32 @@ form{
     }
 }
 
+@media (max-width: 590px){
+
+    .round-button {
+        padding:1em;
+        cursor: pointer;
+        margin: 0px;
+        width:20px;
+        height:20px;
+        line-height:40px;
+    }
+
+    #controls{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "blue black yellow orange green red pink brown" 
+            "pick_color pick_color eraser eraser undo undo clear clear" 
+            "line line line line download download download download" ;
+        width: 100%;
+        margin-bottom: 20px;
+        grid-row-gap: 2px;
+        /* padding: 10px; */
+        border-radius: 5px;
+    }
+}
 @media (max-width: 522px){
     nav a{
         width: 80%;
